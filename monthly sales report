@@ -1,0 +1,46 @@
+class ParkingPass:
+    def __init__(self, pass_type, price):
+        self.__pass_type = pass_type      # Encapsulation
+        self.__price = price
+
+    def get_price(self):
+        return self.__price
+
+    def get_type(self):
+        return self.__pass_type
+
+
+class SalesReport:
+    def __init__(self, month):
+        self.month = month
+        self.weekly_sales = 0
+        self.monthly_sales = 0
+        self.single_sales = 0
+
+    def add_sale(self, pass_type):
+        if pass_type == "weekly":
+            self.weekly_sales += 1
+        elif pass_type == "monthly":
+            self.monthly_sales += 1
+        elif pass_type == "single":
+            self.single_sales += 1
+        else:
+            print("Invalid pass type!")
+
+    def generate_report(self):
+        WEEKLY_PRICE = 50
+        MONTHLY_PRICE = 180
+        SINGLE_PRICE = 10
+
+        weekly_total = self.weekly_sales * WEEKLY_PRICE
+        monthly_total = self.monthly_sales * MONTHLY_PRICE
+        single_total = self.single_sales * SINGLE_PRICE
+
+        total_revenue = weekly_total + monthly_total + single_total
+
+        print("\n------ Monthly Sales Report ------")
+        print("Month:", self.month)
+        print("Weekly Pass Sold:", self.weekly_sales)
+        print("Monthly Pass Sold:", self.monthly_sales)
+        print("Single Entry Pass Sold:", self.single_sales)
+        print("Total Revenue: $", total_revenue)
