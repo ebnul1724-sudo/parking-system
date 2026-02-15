@@ -1,0 +1,12 @@
+class CarEntryReport:
+    def __init__(self, month):
+        self.month = month
+        self.total_cars = 0
+
+    def car_entry(self):
+        self.total_cars += 1
+
+    def generate_car_report(self):
+        print("\n------ Monthly Car Entry Report ------")
+        print("Month:", self.month)
+        print("Total Cars Entered:", self.total_cars)
